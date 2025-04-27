@@ -1,17 +1,25 @@
-// import { useState } from 'react'
-import { Link } from 'react-router'
+import { useState } from 'react'
+import { Post } from './types/types'
+import Layout from './layout/Layout'
+import { PostContext } from './storage/context'
+import useStorage from './storage/storage'
 import './App.css'
+import PostList from '@/entities/PostList/PostList'
+
 
 function HomePage() {
-  // const [] = useState(0)
+  
+  const {getStoragePosts} = useStorage();
+  const storagePosts = getStoragePosts();
+  
+  const [posts, setPosts] = useState<Post[]>(storagePosts)
 
   return (
     <>
-    <nav>
-      <Link to={'/create'}>New</Link>
-      
-    </nav>
-      <h1>HomePage</h1>
+    <PostContext.Provider value={{ posts, setPosts}}>
+      <Layout/>
+      <PostList/>
+    </PostContext.Provider>
     </>
   )
 }
