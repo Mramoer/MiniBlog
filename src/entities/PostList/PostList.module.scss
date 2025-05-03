@@ -1,18 +1,38 @@
+.PostListWrapper {
+  display: block;
+  background-color: white;
+}
+
 .PostList {
   width: 80vw;
   display: grid;
-  grid-template-columns: 33% 33% 33%;  
+  grid-template-columns: 33% 33% 33%;
+  gap: 1em;
+  background-color: #F9FAFC;
 }
 
 .Post {
   margin: 10px 10px;
-  border: 1px solid white;
-  border-radius: 0.5em;
-  min-height: 10em;
-  min-width: 20em;
+  min-height: 15em;
+  min-width: 33%;
+  background-color: white;
 }
+
+.PostInfo > h3, p {
+  text-align: start;
+  margin: 2em;
+}
+
+// .Post > h1 {
+//   background-color: ;
+// }
 
 .Buttons > button {
   padding: 5px;
   margin: 0 1em;
+  
+}
+
+.Buttons > button:hover {
+  background-color: rgb(249, 249, 249);
 }

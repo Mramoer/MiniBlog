@@ -1,5 +1,5 @@
 import { usePostsContext } from "./context"
-import { Comment, Post } from "../types/types";
+import { Comment, Post, ReactionsType } from "../types/types";
 
 
 export default function useStorage() {
@@ -18,7 +18,7 @@ export default function useStorage() {
         setPosts(prev => [...prev, post]);
     }
 
-    const removeStoragePosts = (id: number) => {
+    const removeStoragePosts = (id: number | string | undefined) => {
         setPosts(
             (prev) => {
                 const updatedPosts = prev.filter(post => post.id !== id )
@@ -49,12 +49,36 @@ export default function useStorage() {
             return updatedComms
         })
     }
+    
+    const editStoragePosts = ({header, description, filling}: Post, id: number) => {
+        setPosts((prev) => {
+            const updatedPosts = prev.map((post) => {
+                return post.id === id
+                ? {...post, header, description, filling }
+                : post
+            })
+            return updatedPosts
+        })
+    }
+
+    const setStorageReaction = (IncomingReaction: ReactionsType, postId: number) => {
+        setPosts((prev) => {
+            const updatedPosts = prev.map((post) => {
+                return post.id === postId
+                ? {...post, reaction: post.reaction === IncomingReaction ? null : IncomingReaction}
+                : post
+            })
+            return updatedPosts
+        })
+    }
 
     return { 
         getStoragePosts, 
         setStoragePosts, 
         removeStoragePosts, 
         setStorageComment, 
-        removeStorageComment 
+        removeStorageComment,
+        editStoragePosts,
+        setStorageReaction
     }
 }

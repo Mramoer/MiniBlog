@@ -1,7 +1,62 @@
+.PostWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.backButton {
+    width: 10%;
+    margin: 0 1em;
+    color: black;
+}
+
 .Post {
-    min-width: 70vw;
+    min-width: 95vw;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
     height: 80vh;
-    border: 1px solid purple;
-    border-radius: 1em;
-    background-color: rgb(51, 42, 62);
+    margin: 0 1em;
+    padding: 0 2em;
+    background-color: rgb(246, 248, 250);
+    overflow-y: scroll;
+}
+
+.Post > button {
+    background-color: #F3FDFD;
+    color: gray;
+    border: 1px solid gray;
+}
+
+.controlButtons {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.controlButtons > button {
+    padding: 0.5em;
+}
+
+.Comment {
+    max-width: 100%;
+    background-color: antiquewhite;
+    border: 1px solid black;
+}
+
+.Comment > div > p {
+    max-width: 50%;
+}
+
+.CommentSection {
+    background: red;
+    width: 100%;
+}
+
+.CommentInfo {
+    display: flex;
+    align-items: center;
+}
+
+.CommentInfo:last-child {
+    justify-self: end;
 }

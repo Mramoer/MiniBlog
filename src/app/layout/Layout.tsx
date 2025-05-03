@@ -1,14 +1,14 @@
-import { Link, Outlet, useNavigate } from "react-router"
+import { Outlet } from "react-router"
 import styles from './Layout.module.scss'
+import LinkButton from "@/shared/LinkButton/LinkButton"
 
 
 function Layout() {
-  const navigate = useNavigate()
   return (
     <>
     <div className={styles.Layout}>
-        <h1 onClick={() => navigate('/')}>Мини-блог</h1>
-        <Link to={'/create'}>+Создать пост</Link>
+        <h1>Мини-блог</h1>
+        <LinkButton path="/create">+Создать пост</LinkButton>
     </div>
     <Outlet/>
     </>

@@ -1,8 +1,9 @@
-import { Link } from "react-router"
+import { useNavigate } from "react-router"
 import useStorage from "@/app/storage/storage"
 import styles from './PostForm.module.scss'
 import { useState } from "react";
 import { Post } from "@/app/types/types";
+import LinkButton from "@/shared/LinkButton/LinkButton";
 
 function PostForm() {
 	
@@ -15,6 +16,7 @@ function PostForm() {
 	});
 
 	const {setStoragePosts} = useStorage();
+	const navigate = useNavigate();
 
 	function addPost(e: React.FormEvent<HTMLButtonElement>) {
 		if (
@@ -24,6 +26,7 @@ function PostForm() {
 		) {
 			e.preventDefault();
 			setStoragePosts(formData)
+			navigate('/')
 		}
 	}
 	
@@ -64,9 +67,9 @@ function PostForm() {
 					name="filling" 
 					placeholder="Введите заголовок поста" 
 				  />
-{/* сдобавить вариант кнопки вместо обычной */}
+			</form>
 				<div className={styles.Buttons}>
-					<Link to={'/'}>Отмена</Link>
+					<LinkButton path='/'>Отмена</LinkButton>
 					<button 
 					disabled={
 						!formData.header || 
@@ -75,7 +78,6 @@ function PostForm() {
 					} 
 					onClick={addPost}>Опубликовать</button>
 				</div>
-			</form>
     </div>
   )
 }

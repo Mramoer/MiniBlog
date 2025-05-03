@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { Post } from './types/types'
-import Layout from './layout/Layout'
 import { PostContext } from './storage/context'
 import useStorage from './storage/storage'
-import './App.css'
 import PostList from '@/entities/PostList/PostList'
+import Layout from './layout/Layout'
+import { Post } from './types/types'
+import './index.css'
 
 
 function HomePage() {
