@@ -91,10 +91,10 @@ const Post: React.FC = () => {
         <div className={styles.Post}>
           <div className={styles.controlButtons}>
             <button onClick={() => setEditPopupOpen(prev => !prev)}>
-              <img src={edit} width={15} height={15} alt="edit" />
+              <img src={edit} style={{ width: "1vw", height: "1vw" }} alt="edit" />
             </button>
             <button onClick={() => setDeletePopupOpen(prev => !prev)}>
-              <img src={trashbin} width={15} height={15} alt="trashbin" />
+              <img src={trashbin} style={{ width: "1vw", height: "1vw" }} alt="trashbin" />
             </button>
           </div>
           <h1>{post.title}</h1>
@@ -103,19 +103,19 @@ const Post: React.FC = () => {
           <h2>Реакции</h2>
           <div className={styles.Reactions}>
             <button onClick={() => setReaction(ReactionsType.Like, post.id)} name="like">
-              <img src={like} alt="like emoji button" role="button" width={20} height={20}/>
+              <img src={like} alt="like emoji button" role="button" style={{ width: "1vw", height: "1vw" }}/>
               <span>{currentReaction?.type === ReactionsType.Like ? 1 : 0}</span>
             </button>
             <button onClick={() => setReaction(ReactionsType.Anger, post.id)} name="anger">
-              <img src={anger} alt="anger emoji" role="button" width={20} height={20}/>
+              <img src={anger} alt="anger emoji" role="button" style={{ width: "1vw", height: "1vw" }}/>
               <span>{currentReaction?.type === ReactionsType.Anger ? 1 : 0}</span>
             </button>
             <button onClick={() => setReaction(ReactionsType.Sadness, post.id)} name="sadness">
-              <img src={sadness} alt="sadness emoji button" role="button" width={20} height={20}/>
+              <img src={sadness} alt="sadness emoji button" role="button" style={{ width: "1vw", height: "1vw" }}/>
               <span>{currentReaction?.type === ReactionsType.Sadness ? 1 : 0}</span>
             </button>
             <button onClick={() => setReaction(ReactionsType.Smile, post.id)} name="smile">
-              <img src={smile} alt="smile emoji button" role="button" width={20} height={20}/>
+              <img src={smile} alt="smile emoji button" role="button" style={{ width: "1vw", height: "1vw" }}/>
               <span>{currentReaction?.type === ReactionsType.Smile ? 1 : 0}</span>
             </button>
           </div>

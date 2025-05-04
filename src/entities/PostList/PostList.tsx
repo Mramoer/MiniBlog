@@ -77,33 +77,33 @@ const PostList: React.FC = () => {
             </div>
             <div className={styles.Buttons}>
               <button onClick={() => handleNavigate(post.id)}>
-                <img src={comms} alt="comments button" role="button" width={20} height={20}/>
+                <img src={comms} alt="comments button" role="button" style={{ width: "1vw", height: "1vw" }}/>
               </button>
               {
                 <>
                 <button onClick={() => setReaction(ReactionsType.Like, post.id)} name="like">
-                  <img src={like} alt="like emoji button" role="button" width={20} height={20}/>
+                  <img src={like} alt="like emoji button" role="button" style={{ width: "1vw", height: "1vw" }}/>
                   <span>{currentReaction?.type === ReactionsType.Like ? 1 : 0}</span>
                 </button>
                 <button onClick={() => setReaction(ReactionsType.Anger, post.id)} name="anger">
-                  <img src={anger} alt="anger emoji" role="button" width={20} height={20}/>
+                  <img src={anger} alt="anger emoji" role="button" style={{ width: "1vw", height: "1vw" }}/>
                   <span>{currentReaction?.type === ReactionsType.Anger ? 1 : 0}</span>
                 </button>
                 <button onClick={() => setReaction(ReactionsType.Sadness, post.id)} name="sadness">
-                  <img src={sadness} alt="sadness emoji button" role="button" width={20} height={20}/>
+                  <img src={sadness} alt="sadness emoji button" role="button" style={{ width: "1vw", height: "1vw" }}/>
                   <span>{currentReaction?.type === ReactionsType.Sadness ? 1 : 0}</span>
                 </button>
                 <button onClick={() => setReaction(ReactionsType.Smile, post.id)} name="smile">
-                  <img src={smile} alt="smile emoji button" role="button" width={20} height={20}/>
+                  <img src={smile} alt="smile emoji button" role="button" style={{ width: "1vw", height: "1vw" }}/>
                   <span>{currentReaction?.type === ReactionsType.Smile ? 1 : 0}</span>
                 </button>
                 </>
               }
               <button onClick={() => toggleEditPopup(post.id)}>
-                <img src={edit} alt="edit button" role="button" width={20} height={20}/>
+                <img src={edit} alt="edit button" role="button" style={{ width: "1vw", height: "1vw" }}/>
               </button>
               <button onClick={() => toggleDeletePopup(post.id)}>
-                <img src={trash} alt="trash button" role="button" width={20} height={20}/>
+                <img src={trash} alt="trash button" role="button" style={{ width: "1vw", height: "1vw" }}/>
               </button>
             </div>
           </div>

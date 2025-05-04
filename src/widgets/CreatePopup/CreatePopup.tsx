@@ -30,7 +30,7 @@ const CreatePopup: React.FC = () => {
 		if (formData.title && 
             formData.description && 
             formData.content &&
-            formData.title.length <= 30 &&
+            formData.title.length <= 50 &&
             formData.description.length <= 100
         ) {
 		  addPost(formData);
