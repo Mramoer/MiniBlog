@@ -1,26 +1,26 @@
 import React, { useState, useEffect, createContext, useContext } from 'react';
-import { Post } from '../types/types';
+import { Reaction } from './types/types';
 
-const PostContext = createContext<{
-  posts: Post[];
-  setPosts: React.Dispatch<React.SetStateAction<Post[]>>;
-}>({ posts: [], setPosts: () => {} });
+const ReactionContext = createContext<{
+  reactions: Reaction[];
+  setReactions: React.Dispatch<React.SetStateAction<Reaction[]>>;
+}>({ reactions: [], setReactions: () => {} });
 
-export const usePostsContext = () => useContext(PostContext);
+export const useReactionsContext = () => useContext(ReactionContext);
 
-export const PostsProvider = ({ children }: { children: React.ReactNode }) => {
-  const [posts, setPosts] = useState<Post[]>(() => {
-    const data = localStorage.getItem('posts');
+export const ReactionProvider = ({ children }: { children: React.ReactNode }) => {
+  const [reactions, setReactions] = useState<Reaction[]>(() => {
+    const data = localStorage.getItem('reactions');
     return data ? JSON.parse(data) : [];
   });
 
   useEffect(() => {
-    localStorage.setItem('posts', JSON.stringify(posts));
-  }, [posts]);
+    localStorage.setItem('reactions', JSON.stringify(reactions));
+  }, [reactions]);
 
   return (
-    <PostContext.Provider value={{ posts, setPosts }}>
+    <ReactionContext.Provider value={{ reactions, setReactions }}>
       {children}
-    </PostContext.Provider>
+    </ReactionContext.Provider>
   );
 };

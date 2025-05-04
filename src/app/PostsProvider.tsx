@@ -1,7 +1,7 @@
 import React, { useState, useEffect, createContext, useContext } from 'react';
 import { Post } from './types/types';
 
-const PostContext = createContext<{
+export const PostContext = createContext<{
   posts: Post[];
   setPosts: React.Dispatch<React.SetStateAction<Post[]>>;
 }>({ posts: [], setPosts: () => {} });
@@ -17,7 +17,6 @@ export const PostsProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     localStorage.setItem('posts', JSON.stringify(posts));
   }, [posts]);
-
   return (
     <PostContext.Provider value={{ posts, setPosts }}>
       {children}

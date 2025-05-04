@@ -1,7 +1,7 @@
 .Layout {
     display: flex;
     position: absolute;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100vw;
     top: 0;
     border: 1px solid gray;
@@ -13,4 +13,8 @@
     margin: 0;
     font-size: 1.5em;
     color: #5F84CA;
+}
+
+.Layout > h1, .Layout > button {
+    margin: 0 10% 0 10%;
 }

@@ -1,84 +1,62 @@
-import { usePostsContext } from "./context"
-import { Comment, Post, ReactionsType } from "../types/types";
-
+import { usePostsContext } from "@/app/PostsProvider";
+import { useCommentsContext } from "@/app/CommentsProvider";
+import { useReactionsContext } from "@/app/ReactionsProvider";
+import { Post, Comment, ReactionsType } from "../types/types";
 
 export default function useStorage() {
-    
-    const {setPosts} = usePostsContext()
+  const { posts, setPosts } = usePostsContext();
+  const { comments, setComments } = useCommentsContext();
+  const { reactions, setReactions } = useReactionsContext();
 
-    const getStoragePosts = () => {
-        const storedPosts = localStorage.getItem('posts');
-        if (storedPosts) {
-            return JSON.parse(storedPosts) as Post[];
-        }
-        return []
-    }
+  const addPost = (post: Post) => {
+    const updated = [...posts, post];
+    setPosts(updated);
+  };
 
-    const setStoragePosts = (post: Post) => {
-        setPosts(prev => [...prev, post]);
+  const getStoragePosts = () => {
+    const storedPosts = localStorage.getItem('posts');
+    if (storedPosts) {
+        return JSON.parse(storedPosts) as Post[];
     }
+    return []
+}
 
-    const removeStoragePosts = (id: number | string | undefined) => {
-        setPosts(
-            (prev) => {
-                const updatedPosts = prev.filter(post => post.id !== id )
-                localStorage.setItem('posts', JSON.stringify(updatedPosts));
-                return updatedPosts;
-            }
-        );
-    }
+  const removePost = (id: number | null) => {
+    if (id === null) return;
+    setComments(comments.filter(comment => comment.postId !== id));
+    setReactions(reactions.filter(reaction => reaction.postId !== id));
+    setPosts(posts.filter(post => post.id !== id));
+  };
 
-    const setStorageComment = (comment: Comment, id: number) => {
-        setPosts(prevPosts => {
-            const updatedPosts = prevPosts.map(post => 
-              post.id === id 
-              ? { ...post, comments: [...post.comments, comment] } 
-              : post
-            )
-            return updatedPosts
-        });
-    };
+  const editPosts = (updatedPost: Post, id: number) => {
+    setPosts((prev) =>
+      prev.map((post) => (post.id === id ? { ...post, ...updatedPost } : post))
+    );
+  };
 
-    const removeStorageComment = (commId: number, postID: number) => {
-        setPosts((prev) => {
-            const updatedComms = prev.map(post => 
-                post.id === postID 
-                ? { ...post, comments: post.comments.filter((comm) => comm.id !== commId) } 
-                : post
-            )
-            return updatedComms
-        })
-    }
-    
-    const editStoragePosts = ({header, description, filling}: Post, id: number) => {
-        setPosts((prev) => {
-            const updatedPosts = prev.map((post) => {
-                return post.id === id
-                ? {...post, header, description, filling }
-                : post
-            })
-            return updatedPosts
-        })
-    }
+  const addComment = (comment: Comment) => {
+    setComments([...comments, comment]);
+  };
 
-    const setStorageReaction = (IncomingReaction: ReactionsType, postId: number) => {
-        setPosts((prev) => {
-            const updatedPosts = prev.map((post) => {
-                return post.id === postId
-                ? {...post, reaction: post.reaction === IncomingReaction ? null : IncomingReaction}
-                : post
-            })
-            return updatedPosts
-        })
-    }
+  const removeComment = (id: number) => {
+    setComments(comments.filter(c => c.id !== id));
+  };
 
-    return { 
-        getStoragePosts, 
-        setStoragePosts, 
-        removeStoragePosts, 
-        setStorageComment, 
-        removeStorageComment,
-        editStoragePosts,
-        setStorageReaction
-    }
+  const setReaction = (type: ReactionsType, postId: number ) => {
+    const filtered = reactions.filter(r => r.postId !== postId); 
+    setReactions([...filtered, { id: Date.now(), postId, type }]);
+  };
+
+  const editComment = (updatedComment: Comment) => {
+    setComments(prev =>
+      prev.map(comment => (comment.id === updatedComment.id ? updatedComment : comment))
+    );
+  };
+
+  return {
+    posts, comments, reactions,
+    addPost, removePost,
+    addComment, removeComment,
+    setReaction, editPosts, getStoragePosts, editComment
+  };
 }

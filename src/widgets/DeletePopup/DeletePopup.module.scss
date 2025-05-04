@@ -1,0 +1,19 @@
+.DeletePopup {
+    inset: 0;
+    z-index: 10;
+    width: 25vw;
+    height: 13vw;
+    background-color: white;
+    border: 1px gray solid;
+    border-radius: 1em;
+} 
+
+.PopupButtons > button {
+    margin: 1em 1em;
+    padding: 0.5em;
+}
+
+.DeletePopup > h1 {
+    font-size: 1.5em;
+    margin: 1em 2em;
+}

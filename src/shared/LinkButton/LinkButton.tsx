@@ -1,17 +1,17 @@
-import { Link } from "react-router"
 import styles from './LinkButton.module.scss'
 
-interface LinkButtonProps {
-    path: string,
+interface LinkButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: React.ReactNode
 }
 
-const LinkButton = ({path, children}: LinkButtonProps) => {
+const LinkButton = ({children, ...props}: LinkButtonProps) => {
   return (
-    <Link 
-      className={styles.LinkButton} to={path}>
+    <button
+      className={styles.LinkButton}
+      {...props}
+      >
       {children}
-    </Link>
+    </button>
   )
 }
 

@@ -1,0 +1,62 @@
+.PostWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.backButton {
+    width: 10%;
+    margin: 0 1em;
+    color: black;
+}
+
+.backButton:hover {
+    background: #eae9e9;
+}
+
+.Post {
+    min-width: 95vw;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: 80vh;
+    margin: 0 1em;
+    padding: 0 2em;
+    background-color: #FFFFFF;
+    word-break: break-word;
+    white-space: pre-wrap; 
+    overflow-wrap: anywhere;
+}
+
+.Post > p {
+    margin: 0;
+}
+
+
+.controlButtons {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.controlButtons > button {
+    padding: 0.5em;
+}
+
+.Reactions {
+    display: flex;
+    color: #000;
+}
+
+.Overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.AuthorInput {
+    width: 95%;
+    padding: 1em;
+}

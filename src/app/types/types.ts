@@ -1,25 +1,3 @@
-
-// export enum ReactionsType {
-//     Like = "like", 
-//     Anger = "anger",
-//     Smile = "smile",
-//     Sadness = "sadness",
-// }
-
-// export interface Comment {
-//     text: string, 
-//     id: number
-// }
-
-// export type Post = {
-//     header: string,
-//     description: string,
-//     filling: string,
-//     reaction?: ReactionsType | null,
-//     comments: Comment[],
-//     id: number,
-// }
-
 export interface Post {
     id: number;
     title: string;
@@ -31,9 +9,11 @@ export interface Post {
     id: number;
     postId: number;
     text: string;
+    author: string;
+    date: string;
   }
   
-  export enum ReactionType {
+  export enum ReactionsType {
     Like = 'like',
     Anger = 'anger',
     Sadness = 'sadness',
@@ -43,5 +23,5 @@ export interface Post {
   export interface Reaction {
     id: number;
     postId: number;
-    type: ReactionType;
+    type: ReactionsType;
   }
