@@ -57,7 +57,7 @@ const BriefPost = ({ setDeletePostId, setEditPostId }: PostBriefProps) => {
           >
             <div className={styles.PostInfo}>
               <h3>{post.title}</h3>
-              <p>{post.description}</p>
+              <p className={styles.Description}>{post.description}</p>
             </div>
             <div className={styles.Buttons}>
               <button

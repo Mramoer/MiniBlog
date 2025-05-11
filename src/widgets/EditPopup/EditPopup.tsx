@@ -62,7 +62,7 @@ const EditPopup = ({postId}: EditPopupProps) => {
 					value={editData?.title} 
 					onChange={handleChange} 
 					name="title" 
-					placeholder="Введите заголовок поста" 
+					placeholder="Заголовок поста" 
 				  />
 				<label htmlFor="description"><span>*</span>Краткое описание</label>
 				  <input 
@@ -70,7 +70,7 @@ const EditPopup = ({postId}: EditPopupProps) => {
 					value={editData?.description} 
 					onChange={handleChange} 
 					name="description" 
-					placeholder="Введите заголовок поста" 
+					placeholder="Краткое описание" 
 				  />
 				<label htmlFor="content"><span>*</span>Содержание</label>
 				  <input 
@@ -78,7 +78,7 @@ const EditPopup = ({postId}: EditPopupProps) => {
 					value={editData?.content} 
 					onChange={handleChange} 
 					name="content" 
-					placeholder="Введите заголовок поста" 
+					placeholder="Содержание" 
 				  />
 			</form>
 			<div className={styles.Buttons}>

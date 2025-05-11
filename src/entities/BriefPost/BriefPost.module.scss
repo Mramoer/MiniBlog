@@ -1,7 +1,7 @@
 .Post {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 10px 10px;
   min-height: 30vh;
   min-width: 33%;
@@ -39,8 +39,12 @@
   background-color: rgb(218, 215, 215);
 }
 
+.Description {
+  padding-bottom: 2em;
+}
+
 .Icon {
-  width: 5vw;
+  width: 2vw;
   height: auto;
   max-width: 1.5vw;
   min-width: 1.5vh;
@@ -48,8 +52,8 @@
 
 .ReactionPopup {
   position: absolute;
-  top: 50%;
-  left: 35%;
+  top: 55%;
+  left: 20%;
   border: 1px solid black;
   border-radius: 1em;
   max-width: 60%;

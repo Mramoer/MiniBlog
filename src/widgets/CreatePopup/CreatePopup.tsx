@@ -56,7 +56,7 @@ const CreatePopup: React.FC = () => {
 					value={formData.title} 
 					onChange={handleChange} 
 					name="title" 
-					placeholder="Введите заголовок поста" 
+					placeholder="Заголовок поста" 
 				  />
 				<label htmlFor="description"><span>*</span>Краткое описание</label>
 				  <input 
@@ -64,7 +64,7 @@ const CreatePopup: React.FC = () => {
 					value={formData.description} 
 					onChange={handleChange} 
 					name="description" 
-					placeholder="Введите заголовок поста" 
+					placeholder="Краткое описание" 
 				  />
 				<label htmlFor="content"><span>*</span>Содержание</label>
 				  <input 
@@ -72,7 +72,7 @@ const CreatePopup: React.FC = () => {
 					value={formData.content} 
 					onChange={handleChange} 
 					name="content" 
-					placeholder="Введите заголовок поста" 
+					placeholder="Содержание" 
 				  />
 			</form>
 				<div className={styles.Buttons}>
