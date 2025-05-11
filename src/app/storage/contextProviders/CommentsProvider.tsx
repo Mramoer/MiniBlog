@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext, useContext } from 'react';
-import { Comment } from './types/types';
+import { Comment } from '../../types/types';
 
 const CommentContext = createContext<{
   comments: Comment[];

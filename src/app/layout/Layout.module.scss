@@ -15,6 +15,10 @@
     color: #5F84CA;
 }
 
+.Layout > h1:hover {
+    cursor: pointer;
+}
+
 .Layout > h1, .Layout > button {
     margin: 0 10% 0 10%;
 }

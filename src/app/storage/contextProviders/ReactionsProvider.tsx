@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext, useContext } from 'react';
-import { Reaction } from './types/types';
+import { Reaction } from '../../types/types';
 
 const ReactionContext = createContext<{
   reactions: Reaction[];

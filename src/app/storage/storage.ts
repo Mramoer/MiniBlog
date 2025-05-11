@@ -1,6 +1,6 @@
-import { usePostsContext } from "@/app/PostsProvider";
-import { useCommentsContext } from "@/app/CommentsProvider";
-import { useReactionsContext } from "@/app/ReactionsProvider";
+import { usePostsContext } from "@/app/storage/contextProviders/PostsProvider";
+import { useCommentsContext } from "@/app/storage/contextProviders/CommentsProvider";
+import { useReactionsContext } from "@/app/storage/contextProviders/ReactionsProvider";
 import { Post, Comment, ReactionsType } from "../types/types";
 
 export default function useStorage() {

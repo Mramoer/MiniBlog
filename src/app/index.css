@@ -25,16 +25,14 @@ body {
   margin: 0;
   display: flex;
   min-width: 320px;
-  height: 100vh;
+  min-height: 100vh;
   box-sizing: border-box;
   background-color: #F9FAFC;
-  overflow-x: hidden;
 }
 
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 300;
   font-family: inherit;

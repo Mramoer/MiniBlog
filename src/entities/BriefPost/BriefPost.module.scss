@@ -1,0 +1,56 @@
+.Post {
+  margin: 10px 10px;
+  min-height: 15em;
+  min-width: 33%;
+  max-height: 20em;
+  background-color: white;
+  word-break: break-word;
+  white-space: pre-wrap; 
+  overflow-wrap: anywhere;
+  border: 1px solid white;
+  position: relative;
+}
+
+.Post:hover {
+  cursor: pointer;
+  border: 1px solid gray;
+}
+
+.PostInfo > h3, p {
+  text-align: start;
+  margin: 1em 0 0 1em;
+  padding-top: 1em;
+}
+.Buttons {
+  display: flex;
+  margin-top: 6em;
+  justify-content: space-around;
+  align-items: end;
+}
+
+.Buttons > button {
+  padding: 5px;
+  margin: 0 0.5em;
+  
+}
+
+.Buttons > button:hover {
+  background-color: rgb(218, 215, 215);
+}
+
+.Icon {
+  width: 5vw;
+  height: auto;
+  max-width: 1.5vw;
+  min-width: 1.5vh;
+}
+
+.ReactionPopup {
+  position: absolute;
+  top: 60%;
+  left: 25%;
+  border: 1px solid black;
+  border-radius: 1em;
+  max-width: 60%;
+  padding: 0.2em;
+}

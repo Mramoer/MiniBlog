@@ -8,7 +8,9 @@ function HomePage() {
   return (
     <>
       <Layout />
-      <PostList />
+      <div>
+        <PostList />
+      </div>
     </>
   )
 }

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import useStorage from '@/app/storage/storage';
 import LinkButton from '@/shared/LinkButton/LinkButton';
-import { usePostsContext } from '@/app/PostsProvider';
+import { usePostsContext } from '@/app/storage/contextProviders/PostsProvider';
 import styles from './EditPopup.module.scss'
-import { usePopupContext } from '@/app/TogglePopupProvider';
+import { usePopupContext } from '@/app/storage/contextProviders/TogglePopupProvider';
 import CancelButton from '@/shared/CancelButton/CancelButton';
 
 

@@ -8,8 +8,14 @@
     border-radius: 1em;
 } 
 
+.PopupButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .PopupButtons > button {
-    margin: 1em 1em;
+    margin: 3em 2em 0em 2em;
     padding: 0.5em;
 }
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext, useContext } from 'react';
-import { Post } from './types/types';
+import { Post } from '../../types/types';
 
 export const PostContext = createContext<{
   posts: Post[];

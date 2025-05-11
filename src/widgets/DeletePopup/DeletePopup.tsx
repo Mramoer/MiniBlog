@@ -1,4 +1,4 @@
-import { usePopupContext } from '@/app/TogglePopupProvider';
+import { usePopupContext } from '@/app/storage/contextProviders/TogglePopupProvider';
 import styles from './DeletePopup.module.scss'
 import useStorage from '@/app/storage/storage';
 import CancelButton from '@/shared/CancelButton/CancelButton';
