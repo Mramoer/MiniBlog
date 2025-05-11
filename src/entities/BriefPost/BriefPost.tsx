@@ -1,4 +1,3 @@
-
 import { usePostsContext } from "@/app/storage/contextProviders/PostsProvider";
 import { usePopupContext } from "@/app/storage/contextProviders/TogglePopupProvider";
 import useStorage from "@/app/storage/storage";
@@ -20,7 +19,9 @@ const BriefPost = ({ setDeletePostId, setEditPostId }: PostBriefProps) => {
   const { setDeletePopupOpen, setEditPopupOpen } = usePopupContext();
   const { reactions } = useStorage();
   const { posts } = usePostsContext();
-  const [activePopupPostId, setActivePopupPostId] = useState<number | null>(null);
+  const [activePopupPostId, setActivePopupPostId] = useState<number | null>(
+    null
+  );
   const navigate = useNavigate();
 
   const handleNavigate = (id: number) => {
@@ -58,9 +59,13 @@ const BriefPost = ({ setDeletePostId, setEditPostId }: PostBriefProps) => {
               <h3>{post.title}</h3>
               <p>{post.description}</p>
             </div>
-
             <div className={styles.Buttons}>
-              <button onClick={(e) => { e.stopPropagation(); handleNavigate(post.id); }}>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleNavigate(post.id);
+                }}
+              >
                 <img src={comms} alt="comments" className={styles.Icon} />
               </button>
 
@@ -71,17 +76,30 @@ const BriefPost = ({ setDeletePostId, setEditPostId }: PostBriefProps) => {
                 onTogglePopup={(e) => toggleReactionPopup(e, post.id)}
               />
 
-              <button onClick={(e) => { e.stopPropagation(); toggleEditPopup(post.id); }}>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleEditPopup(post.id);
+                }}
+              >
                 <img src={edit} alt="edit" className={styles.Icon} />
               </button>
 
-              <button onClick={(e) => { e.stopPropagation(); toggleDeletePopup(post.id); }}>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleDeletePopup(post.id);
+                }}
+              >
                 <img src={trash} alt="delete" className={styles.Icon} />
               </button>
             </div>
 
             {isPopupOpen && (
-              <div onClick={(e) => e.stopPropagation()} className={styles.ReactionPopup}>
+              <div
+                onClick={(e) => e.stopPropagation()}
+                className={styles.ReactionPopup}
+              >
                 <ReactionPopup currentReaction={currentReaction} post={post} />
               </div>
             )}

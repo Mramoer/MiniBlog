@@ -1,8 +1,11 @@
 .Post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   margin: 10px 10px;
-  min-height: 15em;
+  min-height: 30vh;
   min-width: 33%;
-  max-height: 20em;
+  max-height: 33vh;
   background-color: white;
   word-break: break-word;
   white-space: pre-wrap; 
@@ -23,15 +26,13 @@
 }
 .Buttons {
   display: flex;
-  margin-top: 6em;
   justify-content: space-around;
   align-items: end;
 }
 
 .Buttons > button {
   padding: 5px;
-  margin: 0 0.5em;
-  
+  margin: 0 0.5em; 
 }
 
 .Buttons > button:hover {
@@ -47,10 +48,10 @@
 
 .ReactionPopup {
   position: absolute;
-  top: 60%;
-  left: 25%;
+  top: 50%;
+  left: 35%;
   border: 1px solid black;
   border-radius: 1em;
   max-width: 60%;
-  padding: 0.2em;
+  padding: 0.3em;
 }
